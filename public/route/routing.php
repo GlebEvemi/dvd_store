@@ -9,7 +9,7 @@ if($path == '' OR $path == 'index' OR $path == 'index.php')
 }
 
 elseif($path == 'all')
-    {
+{
     $response = Controller::AllDisks();
 }
 
