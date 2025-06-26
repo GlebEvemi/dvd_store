@@ -11,7 +11,8 @@
             <tr>
                 <th width="10%">ID</th>
                 <th width="70%">Game Title/Genre</th>
-                <th width="20%"></th>
+                <th width="auto">Price</th>
+                <th width="auto"></th>
             </tr>
 
             <?php
@@ -21,7 +22,7 @@
                 echo '<td><b>Title:</b> ' . $row['title'] . '<br>';
                 $genres = modelAdminGenre::getGenresByDisk($row["id"]);
 
-                    echo '<b>Genre: </b><i>';
+                echo '<b>Genre: </b><i>';
                 if (!empty($genres)) {
 
                     foreach ($genres as $genre) {
@@ -29,8 +30,9 @@
                     }
                     echo '</i>';
                 } else {
-                   echo "-"; 
+                    echo "-";
                 }
+                echo '<td><b>' . ($row['price'] ? $row['price'] : '-') . '</b></td>';
                 echo '</td>';
                 echo '<td>
                         <a href="diskEdit?id=' . $row['id'] . '">Edit <span class="glyphicon-edit" aria-hidden="true"></span></a>

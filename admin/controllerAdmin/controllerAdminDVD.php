@@ -1,5 +1,5 @@
 <?php
-class controllerAdminNews
+class controllerAdminDisks
 {
 
     //list News
@@ -30,7 +30,7 @@ class controllerAdminNews
 
     public static function diskEditResult($id)
     {
-        $test = modelAdminNews::getDiskEdit($id);
+        $test = modelAdminDisks::getDiskEdit($id);
         include_once('viewAdmin/diskEditForm.php');
     }
 
@@ -45,8 +45,8 @@ class controllerAdminNews
     {
         // Проверяем, была ли отправлена форма
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $test = modelAdminDisks::getNewsDelete($id);
-            include_once('viewAdmin/newsDeleteForm.php');
+            $result = modelAdminDisks::getDiskDelete($id);
+            include_once('viewAdmin/diskDeleteForm.php');
         } else {
             // Если форма не отправлена, показываем форму подтверждения
             self::diskDeleteForm($id);

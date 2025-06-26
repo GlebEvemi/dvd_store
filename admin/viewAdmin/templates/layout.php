@@ -27,8 +27,8 @@
                 if (isset($_SESSION["status"]) && $_SESSION["status"] == "admin") {
                     echo '<h4>
                             <a href="../" target="_blank">WEB SITE</a>
-                            &#187; <a href="newsAdmin">Categories</a>
-                            &#187; <a href="newsAdmin">NewsList</a>
+                            &#187; <a href="diskAdmin">Genres</a>
+                            &#187; <a href="diskAdmin">Disks</a>
                           </h4>';
                 } else {
                     echo '<h4>No grants!</h4>';

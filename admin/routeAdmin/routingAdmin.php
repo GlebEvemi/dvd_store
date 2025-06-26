@@ -22,23 +22,23 @@ if ($path == '' or $path == 'index.php') {
 //---listNews
 elseif ($path == 'diskAdmin') {
     diskAdm:
-    $response = controllerAdminNews::DisksList();
+    $response = controllerAdminDisks::DisksList();
 } elseif ($path == 'diskAdd') {
-    $response = controllerAdminNews::diskAddForm();
+    $response = controllerAdminDisks::diskAddForm();
 } elseif ($path == 'diskAddResult') {
-    $response = controllerAdminNews::diskAddResult();
+    $response = controllerAdminDisks::diskAddResult();
 } elseif ($path == 'diskEdit' && isset($_GET['id'])) {
-    $response = controllerAdminNews::diskEditForm($_GET['id']);
+    $response = controllerAdminDisks::diskEditForm($_GET['id']);
 } elseif ($path == 'diskEditResult' && isset($_GET['id'])) {
-    $response = controllerAdminNews::diskEditResult($_GET['id']);
+    $response = controllerAdminDisks::diskEditResult($_GET['id']);
 }
 
 
 // Удаление новости
 elseif ($path == 'diskDel' && isset($_GET['id'])) {
-    $response = controllerAdminNews::diskDeleteForm($_GET['id']);
+    $response = controllerAdminDisks::diskDeleteForm($_GET['id']);
 } elseif ($path == 'diskDelResult' && isset($_GET['id'])) {
-    $response = controllerAdminNews::diskDeleteResult($_GET['id']);
+    $response = controllerAdminDisks::diskDeleteResult($_GET['id']);
 } else {
     error404:
     // Страница не существует
