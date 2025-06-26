@@ -1,0 +1,355 @@
+/* =============================================================================== */
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+h2 {
+    font-family: monospace;
+    color: #606060;
+}
+
+
+/* HEADER =================================================================== */
+
+
+/* NAVMENU =================================================== */
+
+nav {
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topmenu>li {
+    display: inline-block;
+    margin-right: auto;
+    position: relative;
+    width: 10%;
+    padding: auto;
+    text-align: center;
+}
+
+.topmenu>li:last-child {
+    margin-right: 0;
+}
+
+.divBox {
+    width: 85%;
+    margin-left: 20px;
+}
+
+.pull-right {
+    padding: 20px;
+    float: right;
+}
+
+
+/*img {
+    min-width: 30%;
+}*/
+
+a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    outline: none;
+    transition: .5s linear;
+}
+
+.fa {
+    font-family: "FontAwesome";
+    color: inherit;
+    padding-left: 10px;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+}
+
+.one ul {
+    background: #AB0000;
+}
+
+.one ul a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.one ul a:hover {
+    color: gold;
+    transition: 0.3s;
+    text-decoration: underline;
+}
+
+.one .submenu {
+    display: none;
+    background: #c40202;
+}
+
+.one ul li:hover .submenu {
+    display: block;
+}
+
+.logo {
+    width: auto;
+    color: white;
+    font-size: 1.2em;
+    margin-left: 15%;
+}
+
+.submenuunit {
+    height: auto;
+    width: 100%;
+}
+
+section {
+    padding: 2%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.search {
+    margin-left: 250px;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    width: auto;
+}
+
+.searchbar {
+    height: 25px;
+    margin-bottom: 3px;
+    width: 300px;
+    border-radius: 4px;
+    padding: 2px;
+    border: 0;
+}
+
+table {
+
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+    font-size: 1.2rem;
+    box-shadow: 10px 5px 32px black;
+}
+
+td {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+tr {
+    padding: 0;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ff9800;
+    text-decoration: bold;
+    padding: 20px;
+    margin: 0;
+}
+
+
+.btn {
+    background-color: #43E16F;
+    border-radius: 3px;
+    margin-left: 10px;
+    height: 30px;
+    border: 0;
+    color: white;
+    font-weight: 600;
+}
+
+p {
+    word-wrap: break-word;
+    display: flex;
+    font-size: 1.2rem;
+}
+
+h1 {
+    width: auto;
+    display: inline-block;
+}
+
+.courselink {
+    color: black;
+    font-weight: 550;
+}
+
+.courselink:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.control {
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    text-align: center;
+}
+
+
+/* Общие стили */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+
+/* Навигация */
+
+.navbar {
+    background-color: #1e1e1e;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff9800;
+}
+
+
+/* Главный контент */
+
+.content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ff9800;
+}
+
+
+/* Карточки дисков */
+
+.disk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.disk-card {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.disk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 152, 0, 0.4);
+}
+
+.disk-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.disk-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.disk-card p {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #ff9800;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 4rem;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    text-align: center;
+    color: #888;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+}
+
+.one .submenu {
+    display: none;
+    background: #c40202;
+}
+
+.one ul li:hover .submenu {
+    display: block;
+}
+
+.submenuunit {
+    height: auto;
+    width: 100%;
+}
