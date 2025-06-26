@@ -1,6 +1,6 @@
 <?php
 // Заголовок "All" (если нужен)
-echo "<li class='submenuunit'><a href='/all'>All</a></li>";
+echo "<li class='submenuunit'><a href='/all'>" . tr("Näita kõike", "Показать всё") . "</a></li>";
 
 // Вывод категорий с сортировкой
 usort($arr, function ($a, $b) {
@@ -12,4 +12,3 @@ foreach ($arr as $value) {
         <a href='genres?id=" . (int)$value['id'] . "'>" . htmlspecialchars($value['name']) . "</a>
     </li>";
 }
-

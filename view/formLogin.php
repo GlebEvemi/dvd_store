@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Register User</title>
+    <title><?= tr("Autentimine", "Авторизация") ?></title>
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="login.css" rel="stylesheet">
 </head>
