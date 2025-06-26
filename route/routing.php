@@ -3,6 +3,8 @@ $host = explode('?', $_SERVER['REQUEST_URI'])[0];
 $num = substr_count($host, '/');
 $path = explode('/', $host)[$num];
 
+$_GET["lang"] = $_SESSION["lang"];
+
 if ($path == '' or $path == 'index' or $path == 'index.php') {
     $response = Controller::StartSite();
 } elseif ($path == 'all') {
@@ -22,5 +24,6 @@ if ($path == '' or $path == 'index' or $path == 'index.php') {
 } elseif ($path == 'loginForm') {
     $response = Controller::loginForm();
 } else {
+    error404:
     $response = Controller::error404();
 }
