@@ -41,8 +41,9 @@ class Controller
 
     public static function DiskByID($id)
     {
-        $n = Disk::getDiskByID($id);
-        include_once 'view/readnews.php';
+        $lang = $_GET['lang'] ?? 'ee';
+        $n = Disk::getDiskByID($id, $lang);
+        include_once 'view/readdisk.php';
     }
 
     public static function error404()
@@ -118,6 +119,9 @@ class Controller
     public static function loginUser()
     {
         $result = Register::login();
-        include_once('./index.php');
+        $_SESSION["logged_in"] = true;
+        $_SESSION["user"] = $result;
+        header('Location', '/');
+        self::StartSite();
     }
 }
