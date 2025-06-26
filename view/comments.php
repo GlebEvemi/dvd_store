@@ -34,7 +34,7 @@ class ViewComments
     public static function CommentsCount($value)
     {
         if ($value['count'] > 0) {
-            echo '<b><font color="red">(' . $value['count'] . ') </font></b>';
+            echo '<b> (' . $value['count'] . ')</b>';
         }
     }
 }
