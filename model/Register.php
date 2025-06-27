@@ -1,8 +1,13 @@
 <?php
 class Register
 {
-    public static function registerUser()
-    {
+    public static function userLogout() {
+        session_unset();
+        session_destroy();
+        header("Location: /");
+    }
+
+    public static function registerUser() {
         $controll = array(0 => false, 1 => 'Ошибка регистрации');
 
         if (isset($_POST['save'])) {
@@ -70,14 +75,13 @@ class Register
 
         $user = $db->getOne($sql, [$username]);
         if (!is_array($user) || empty($user)) {
-            echo "Пользователь не найден.";
             return;
         }
 
         if (password_verify($password, $user["password"])) {
             return $user;
         } else {
-            echo "Неправильное имя или пароль";
+            self::userLogout();
         }
     }
 }

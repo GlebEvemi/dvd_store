@@ -17,27 +17,28 @@
     <nav class="navbar">
         <div class="container">
             <ul class="nav-links">
-                <details>
+                <details class="nav-link">
                     <summary><?= tr("Žanrid", "Жанры") ?></summary>
-                    <li>
-                        <ul class="submenu">
-                            <?php
-                            Controller::AllGenres();
-                            ?>
-                        </ul>
-                    </li>
+                    <ul class="submenu">
+                        <?php
+                        Controller::AllGenres();
+                        ?>
+                    </ul>
                 </details>
                 <li><a href="./" class="nav-link"><?= tr("Stardileht", "Домой") ?></a></li>
+                <li><a href="/toggleLanguage" class="nav-link"><?= tr("Русский", "Eesti") ?></a></li>
+
+                <li style="margin-left: auto;" />
                 <?php
                 if (!$_SESSION['logged_in']) {
                     echo '<li><a href="registerForm" class="nav-link">Register</a></li>';
                     echo '<li><a href="loginForm" class="nav-link">Login</a></li>';
                 }
                 ?>
-                <li style="margin-left: auto;" />
                 <?php
                 if ($_SESSION["logged_in"]) {
                     echo "<li><a class='nav-link'>" . $_SESSION["user"]["username"] . "</a></li>";
+                    echo "<li><a href='/logout' class='nav-link'>Log out</a></li>";
                 } else {
                     goto end;
                 }

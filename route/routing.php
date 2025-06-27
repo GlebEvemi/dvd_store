@@ -21,9 +21,14 @@ if ($path == '' or $path == 'index' or $path == 'index.php') {
     $response = Controller::registerUser();
 } elseif ($path == 'loginAnswer') {
     $response = Controller::loginUser();
+} elseif ($path == 'logout') {
+    Register::userLogout();
 } elseif ($path == 'loginForm') {
     $response = Controller::loginForm();
-}else {
+} elseif ($path == 'toggleLanguage') {
+    toggleLanguage();
+    header("Location: /");
+} else {
     error404:
     $response = Controller::error404();
 }

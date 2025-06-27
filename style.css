@@ -297,6 +297,36 @@ body {
     }
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Унифицируем стиль <summary> под обычные ссылки */
+.nav-link summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Скрыть треугольник ▼ у summary */
+.nav-link summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Подогнать высоту details под остальные элементы */
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 
 .disk-card {
     opacity: 0;
@@ -375,8 +405,9 @@ footer {
 
 .submenu {
     position: absolute;
-    top: 30px;
+    top: 70px;
     left: 0;
+    padding-right: 30px;
     width: auto;
     z-index: 10;
     transition: 0.5s ease-in-out;
@@ -397,7 +428,7 @@ footer {
 
 .submenuunit>* {
     text-decoration: none;
-    color: white;
+    color: #ccc;
     height: auto;
     width: 100%;
 }

@@ -2,7 +2,7 @@
 
 function tr($ee, $ru)
 {
-    $lang = $_GET['lang'] ?? 'ee';
+    $lang = $_SESSION['lang'] ?? 'ee';
 
     if ($lang === 'ee') {
         return $ee;
@@ -11,4 +11,9 @@ function tr($ee, $ru)
     } else {
         return $ee;
     }
+}
+
+function toggleLanguage()
+{
+    $_SESSION['lang'] = tr('ru', 'ee');
 }

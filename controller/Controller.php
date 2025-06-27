@@ -5,21 +5,24 @@ class Controller
 
     public static function StartSite()
     {
-        $lang = $_GET['lang'] ?? 'ee';
+        $lang = $_SESSION['lang'] ?? 'ee';
         $arr = Disk::getAllDisks($lang);
         include_once 'view/start.php';
     }
 
     public static function AllGenres()
     {
-        $lang = $_GET['lang'] ?? 'ee';
+
+        $lang = $_SESSION['lang'] ?? 'ee';
+
         $arr = Genres::getAllGenres($lang);
         include_once 'view/genres.php';
     }
 
     public static function AllDisks()
     {
-        $lang = $_GET['lang'] ?? 'ee';
+        $lang = $_SESSION['lang'] ?? 'ee';
+
         $arr = Disk::getAllDisks($lang);
         include_once 'view/disk.php';
         ob_start();
@@ -30,7 +33,7 @@ class Controller
 
     public static function DiskByGenre($genre_id)
     {
-        $lang = $_GET['lang'] ?? 'ee';
+        $lang = $_SESSION['lang'] ?? 'ee';
         $arr = Disk::getDisksByGenreID($lang, $genre_id);
         include_once 'view/disk.php';
         ob_start();
@@ -41,7 +44,7 @@ class Controller
 
     public static function DiskByID($id)
     {
-        $lang = $_GET['lang'] ?? 'ee';
+        $lang = $_SESSION['lang'] ?? 'ee';
         $n = Disk::getDiskByID($id, $lang);
         include_once 'view/readdisk.php';
     }
@@ -120,9 +123,13 @@ class Controller
     public static function loginUser()
     {
         $result = Register::login();
-        $_SESSION["logged_in"] = true;
+
+        if ($result) {
+            $_SESSION["logged_in"] = true;
+        } else {
+            $_SESSION["logged_in"] = false;
+        }
         $_SESSION["user"] = $result;
-        header('Location', '/');
         self::StartSite();
     }
 }
