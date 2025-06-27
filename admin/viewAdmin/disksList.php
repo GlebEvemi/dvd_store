@@ -4,10 +4,10 @@
 
 <div class="container" style="min-height:400px;">
     <div style="margin:20px;">
-        <a class="btn-primary" href="diskAdd" role="button">Добавить диск</a>
+        <a class="btn" href="diskAdd" role="button">Add new disk</a>
     </div>
     <div class="col-md-11">
-        <table class="table-bordered table-responsive">
+        <table id="comment" class="table-responsive">
             <tr>
                 <th width="10%">ID</th>
                 <th width="70%">Game Title/Genre</th>

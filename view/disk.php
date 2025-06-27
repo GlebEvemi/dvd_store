@@ -23,8 +23,8 @@ class ViewDisks
         foreach ($arr as $value) {
             $title = htmlspecialchars($value['title'] ?? 'Без названия');
             $genre = htmlspecialchars($value['genre'] ?? 'Жанр не указан');
-            $year = htmlspecialchars($value['release_year'] ?? 'Год неизвестен');
-            $price = isset($value['price']) ? number_format((float)$value['price'], 2, '.', '') . '€' : 'Цена не указана';
+            $year = htmlspecialchars($value['release_year'] ?? 'N/A');
+            $price = isset($value['price']) ? number_format((float)$value['price'], 2, '.', '') . '€' : '-';
             $img = htmlspecialchars($value['image_url'] ?? 'img/header.jpg'); // путь по умолчанию
             $id = isset($value['id']) ? (int)$value['id'] : null;
 

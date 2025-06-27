@@ -8,13 +8,13 @@
             if ($test == true) {
         ?>
                 <div class="alert alert-info">
-                    <strong>Записи изменены.</strong> <a href="diskAdmin">Список новостей</a>
+                    <strong>Successful</strong> <a href="diskAdmin">Return to Disks</a>
                 </div>
             <?php
             } else {
             ?>
                 <div class="alert alert-warning">
-                    <strong>Ошибка изменения записи!</strong> <a href="diskAdmin">Список новостей</a>
+                    <strong>Error occured!</strong> <a href="diskAdmin">Return to Disks</a>
                 </div>
             <?php
             }
@@ -22,7 +22,7 @@
             ?>
 
             <form method="POST" action="diskEditResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
-                <table class="table table-bordered">
+                <table id="comment">
                     <tr>
                         <td>Disk title</td>
                         <td><input type="text" name="title" class="form-control" required value="<?php echo htmlspecialchars($detail['title']); ?>"></td>
@@ -82,11 +82,9 @@
                     <tr>
                         <td colspan="2">
                             <button type="submit" class="btn btn-primary" name="save">
-                                <span class="glyphicon glyphicon-plus"></span> Изменить
-                            </button>
+                                <span class="glyphicon glyphicon-plus"></span> Edit </button>
                             <a href="diskAdmin" class="btn btn-large btn-success">
-                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Назад к списку
-                            </a>
+                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Cancel </a>
                         </td>
                     </tr>
                 </table>

@@ -12,7 +12,6 @@ if ($path == '' or $path == 'index.php') {
     }
 
     goto diskAdm;
-    
 } elseif ($path == 'logout') {
     // Выход
     $response = controllerAdmin::logoutAction();
@@ -31,11 +30,7 @@ elseif ($path == 'diskAdmin') {
     $response = controllerAdminDisks::diskEditForm($_GET['id']);
 } elseif ($path == 'diskEditResult' && isset($_GET['id'])) {
     $response = controllerAdminDisks::diskEditResult($_GET['id']);
-}
-
-
-// Удаление новости
-elseif ($path == 'diskDel' && isset($_GET['id'])) {
+} elseif ($path == 'diskDel' && isset($_GET['id'])) {
     $response = controllerAdminDisks::diskDeleteForm($_GET['id']);
 } elseif ($path == 'diskDelResult' && isset($_GET['id'])) {
     $response = controllerAdminDisks::diskDeleteResult($_GET['id']);
@@ -44,4 +39,3 @@ elseif ($path == 'diskDel' && isset($_GET['id'])) {
     // Страница не существует
     $response = controllerAdmin::error404();
 }
-
