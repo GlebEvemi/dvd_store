@@ -14,8 +14,7 @@ class ViewComments
     {
         if ($arr != null) {
             echo '<table id="comments">';
-            echo '<thead><tr><th>Kommentaar</th><th>' . tr("Kommentaari kuupäev", "Создан в") . '</th></tr></thead>';
-            echo '<tbody>';
+            echo '<thead><tr><th>' . tr('Kommentaar', 'Комментарий') . '</th><th>' . tr("Kommentaari kuupäev", "Создан в") . '</th></tr></thead>';            echo '<tbody>';
             foreach ($arr as $value) {
                 echo '<tr><td>' . htmlspecialchars($value['comment']) . '</td><td>' . htmlspecialchars($value['created_at']) . '</td></tr>';
             }

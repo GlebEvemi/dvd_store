@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DVD Store</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-gg0yR01XcbMQv3Xipma34MD+dH/lfQ784/j6cY/iJTQUOhCWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">

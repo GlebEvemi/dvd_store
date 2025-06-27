@@ -23,7 +23,7 @@ if ($path == '' or $path == 'index' or $path == 'index.php') {
     $response = Controller::loginUser();
 } elseif ($path == 'loginForm') {
     $response = Controller::loginForm();
-} else {
+}else {
     error404:
     $response = Controller::error404();
 }

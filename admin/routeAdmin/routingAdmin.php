@@ -13,12 +13,12 @@ if ($path == '' or $path == 'index.php') {
 
     goto diskAdm;
 } elseif ($path == 'logout') {
-    // Выход
+   
     $response = controllerAdmin::logoutAction();
 } elseif ($path == 'logout') {
     $response = controllerAdmin::logoutAction();
 }
-//---listNews
+
 elseif ($path == 'diskAdmin') {
     diskAdm:
     $response = controllerAdminDisks::DisksList();

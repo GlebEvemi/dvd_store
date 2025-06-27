@@ -6,6 +6,7 @@
     <link href="../admin/public/css/bootstrap.min.css" rel="stylesheet">
     <link href="../admin/public/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../admin/public/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/ajaxupload.3.5.js"></script>
