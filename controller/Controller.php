@@ -114,6 +114,7 @@ class Controller
     {
         $result = Register::registerUser();
         include_once('./index.php');
+        header("Location: /");
     }
 
     public static function loginUser()
