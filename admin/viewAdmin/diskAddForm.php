@@ -8,14 +8,14 @@
 
         ?>
                 <div class="alert-info">
-                    <strong>Запись добавлена. </strong><a href="diskAdmin"> Список новостей</a>
+                    <strong>Success </strong><a href="diskAdmin"> Return to Disks</a>
 
                 </div>
             <?php
             } else if ($result == false) {
             ?>
                 <div class="alert-warning">
-                    <strong>Ошибка добавления записи!</strong><a href="diskAdmin"> Список новостей</a>
+                    <strong>Error</strong><a href="diskAdmin"> Return to Disks</a>
 
                     <?= $_SESSION["error"] ?>
                 </div>

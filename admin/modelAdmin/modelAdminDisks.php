@@ -116,14 +116,29 @@ class modelAdminDisks
                         $imageUrl = '/uploads/' . $uniqueName; // путь сохраняем в БД
                     }
                 }
-                if ($imageUrl == "") {
-                    $sql = "UPDATE disks SET title = '$title', description = '$description', price = $price, release_year=$year WHERE id = $id";
-                } else {
-                    $sql = "UPDATE disks SET title = '$title', description = '$description', image_url='$imageUrl', price = $price, release_year=$year WHERE id = $id";
-                }
 
                 $db = new Database();
-                $test = $db->executeRun($sql);
+                if ($imageUrl == "") {
+                    $sql = "UPDATE disks SET title = :title, description = :description, price=:price, release_year=:year WHERE id=:id";
+                    $test = $db->executeRun($sql, [
+                        ":id" => $id,
+                        ":title" => $title,
+                        ":description" => $description,
+                        ":price" => $price,
+                        ":year" => $year,
+                    ]);
+                } else {
+                    $sql = "UPDATE disks SET title = :title, description = :description, image_url=:imageUrl, price=:price, release_year=:year WHERE id=:id";
+                    $test = $db->executeRun($sql, [
+                        ":id" => $id,
+                        ":title" => $title,
+                        ":description" => $description,
+                        ":imageUrl" => $imageUrl,
+                        ":price" => $price,
+                        ":year" => $year,
+                    ]);
+                }
+
                 if (!$test) {
                     return $test;
                 }
