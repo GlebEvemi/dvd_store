@@ -14,24 +14,14 @@
 <body>
     <div class="container">
 
-        <?php if (isset($_SESSION["userId"]) && isset($_SESSION["sessionId"])): ?>
+        <?php if ($_SESSION["logged_in"] && isset($_SESSION["user"]["id"])): ?>
 
             <div class="header clearfix">
                 <div class="navbar navbar-default">
                     <div class="container-fluid">
                         <?php
-                        echo '<ul class="nav nav-pills pull-right">
-                    <li role="button">' . htmlspecialchars($_SESSION["name"], ENT_QUOTES, 'UTF-8') . '
-                        <a href="logout" style="display: inline;">Выйти <i class="fa-sign-out"></i></a>
-                    </li>
-                </ul>';
-
-                        if (isset($_SESSION["status"]) && $_SESSION["status"] == "admin") {
-                            echo '<h4>
-                            <a href="../" target="_blank">WEB SITE</a>
-                            &#187; <a href="diskAdmin">Genres</a>
-                            &#187; <a href="diskAdmin">Disks</a>
-                          </h4>';
+                        if (isset($_SESSION["user"]["status"]) && $_SESSION["user"]["status"] == "admin") {
+                            echo "<a class='btn' href='/'>Home</a>";
                         } else {
                             echo '<h4>No grants!</h4>';
                         }
