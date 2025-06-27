@@ -67,7 +67,11 @@
     <footer>
         <p>&copy; 2025 Gleb Pushin</p>
     </footer>
-
+    <script>
+        document.querySelectorAll('.disk-card').forEach((el, i) => {
+            el.style.animation = `fadeIn 0.8s ease-in-out ${i * 100}ms forwards`;
+        });
+    </script>
 </body>
 
 </html>
